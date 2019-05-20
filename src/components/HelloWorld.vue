@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <h1>头部</h1>
+    </div>
     <div class="scroll-list-wrap" slot="demo">
       <scroll ref="scroll"
         :data="items"
@@ -10,19 +13,14 @@
         @pullingDown="onPullingDown"
         @pullingUp="onPullingUp"
         @click="clickItem">
+        <li>123123</li>
       </scroll>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import Vue from 'vue'
-  import OptionalDemo from './optional-demo/optional-demo.vue'
   import Scroll from './scroll/scroll.vue'
-  import SwitchOption from './switch-option/switch-option.vue'
-  import InputOption from './input-option/input-option.vue'
-  import SelectOption from './select-option/select-option.vue'
-
   import { ease } from '../common/ease'
 
   export default {
@@ -53,11 +51,7 @@
       }
     },
     components: {
-      OptionalDemo,
-      Scroll,
-      SwitchOption,
-      InputOption,
-      SelectOption
+      Scroll
     },
     watch: {
       scrollbarObj: {
@@ -212,12 +206,18 @@
   }
 </script>
 
-<style scoped lang="stylus" rel="stylesheet/stylus">
+<style scoped lang="less">
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  text-align: center;
+}
 .scroll-list-wrap {
-  position fixed
-  width 100%
-  height 100%
-  left 0
-  top 0
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 29px);
+  left: 0;
+  top: 42px;
 }
 </style>

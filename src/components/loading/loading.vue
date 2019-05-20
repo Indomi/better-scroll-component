@@ -10,10 +10,12 @@
     name: COMPONENT_NAME
   }
 </script>
-<style lang="stylus" rel="stylesheet/stylus">
-  .mf-loading-container
-    img
-      width: 20px
-      height: 20px
-      display: block
+<style lang="less" scoped>
+.mf-loading-container {
+  img {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+}
 </style>

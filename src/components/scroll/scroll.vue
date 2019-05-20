@@ -133,14 +133,14 @@
     },
     computed: {
       pullUpTxt() {
-        const moreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.more) || this.$i18n.t('scrollComponent.defaultLoadTxtMore')
+        const moreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.more) || '加载更多'
 
-        const noMoreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.noMore) || this.$i18n.t('scrollComponent.defaultLoadTxtNoMore')
+        const noMoreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.noMore) || '已经加载到底啦'
 
         return this.pullUpDirty ? moreTxt : noMoreTxt
       },
       refreshTxt() {
-        return (this.pullDownRefresh && this.pullDownRefresh.txt) || this.$i18n.t('scrollComponent.defaultRefreshTxt')
+        return (this.pullDownRefresh && this.pullDownRefresh.txt) || '刷新成功'
       }
     },
     created() {
@@ -310,47 +310,46 @@
     }
   }
 </script>
-
-<style lang="stylus" rel="stylesheet/stylus">
-  .list-wrapper
-    position: relative
-    height: 100%
-    /*position: absolute*/
-    /*left: 0*/
-    /*top: 0*/
-    /*right: 0*/
-    /*bottom: 0*/
-    overflow: hidden
-    background: #fff
-    .scroll-content
-      position: relative
-      z-index: 1
-    .list-content
-      position: relative
-      z-index: 10
-      background: #fff
-      .list-item
-        height: 60px
-        line-height: 60px
-        font-size: 18px
-        padding-left: 20px
-        border-bottom: 1px solid #e5e5e5
-
-  .pulldown-wrapper
-    position: absolute
-    width: 100%
-    left: 0
-    display: flex
-    justify-content center
-    align-items center
-    transition: all
-    .after-trigger
-      margin-top: 10px
-
-  .pullup-wrapper
-    width: 100%
-    display: flex
-    justify-content center
-    align-items center
-    padding: 16px 0
+<style lang="less" scoped>
+.list-wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  .scroll-content {
+    position: relative;
+    z-index: 1;
+  }
+  .list-content {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+    .list-item {
+      height: 60px;
+      line-height: 60px;
+      font-size: 18px;
+      padding-left: 20px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+  }
+}
+.pulldown-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all;
+  .after-trigger {
+    margin-top: 10px;
+  }
+}
+.pullup-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+}
 </style>
